@@ -1,4 +1,4 @@
-# 🚀 Evines — SaaS Starter Kit with Next.js
+# 🚀 Evines — Full-Stack SaaS Platform
 
 A production-ready SaaS boilerplate I built to demonstrate modern full-stack development practices. This personal project showcases a complete authentication system, subscription management, and database integration using the latest web technologies.
 
