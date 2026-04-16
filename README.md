@@ -1,81 +1,121 @@
-# 🚀 Evines — Premium Next.js SaaS Starter Kit
+# 🚀 Evines — SaaS Starter Kit with Next.js
 
-Thank you for choosing **Evines**, a high-end boilerplate from [bloomtpl.com](https://bloomtpl.com). This template is engineered for excellence, handling the "boring stuff" (Auth, Billing, DB) so you can focus on building your vision.
+A production-ready SaaS boilerplate I built to demonstrate modern full-stack development practices. This personal project showcases a complete authentication system, subscription management, and database integration using the latest web technologies.
 
-## 🛠 Tech Stack (Latest Versions)
+## 🎯 About the Project
 
-- **Framework:** Next.js 16.1 (App Router)
-- **Library:** React 19 (Actions & New Hooks)
-- **Styling:** Tailwind CSS v4 (Next-gen engine)
-- **Database:** Prisma (Type-safe ORM)
-- **Auth:** Auth.js v5 (Secure & Lightweight)
-- **Payments:** Stripe (Pre-configured PRO & ELITE tiers)
+Evines is a comprehensive SaaS starter application I developed to explore and master the full stack of modern web development. The goal was to build a solid foundation that handles all the essential features of a SaaS product—authentication, billing, database management—while maintaining clean architecture and type safety throughout.
 
-## ⚡ Quick Start
+## ✨ Features Implemented
 
-### 1. Installation & Init
+### 🔐 Authentication System
 
-```bash
-# Install dependencies
-npm install
+- Secure authentication with Auth.js v5
+- Social login integration (Google, GitHub)
+- Magic link email authentication
+- Session management and protected routes
 
-# Create environment file
-cp .env.example .env
+### 💳 Subscription & Billing
 
-# Generate Auth Secret
-npx auth secret
+- Complete Stripe integration
+- Multiple pricing tiers (Pro & Elite)
+- Monthly and yearly billing options
+- Webhook handling for subscription events
+- Customer portal integration
+
+### 🗄️ Database Management
+
+- PostgreSQL database with Prisma ORM
+- Type-safe database queries
+- Schema migrations and seeding
+- Visual database editor with Prisma Studio
+
+### 📧 Email System
+
+- Transactional emails via Resend
+- Magic link authentication emails
+- Welcome and onboarding sequences
+- Custom email templates
+
+### 🛠 Tech Stack
+
+- Framework: Next.js 16.1 with App Router
+- Library: React 19 (Server Actions & New Hooks)
+- Styling: Tailwind CSS v4 (Next-gen engine)
+- Database: Prisma (Type-safe ORM)
+- Auth: Auth.js v5
+- Payments: Stripe
+- Email: Resend
+
+## 📁 Project Architecture
+
+```
+evines/
+├── app/                      # Next.js App Router
+│   ├── (auth)/              # Authentication routes
+│   ├── (dashboard)/         # Protected dashboard routes
+│   ├── api/                 # API routes & webhooks
+│   └── actions/             # Server actions
+├── components/
+│   ├── auth/                # Authentication components
+│   ├── dashboard/           # Dashboard UI components
+│   ├── pricing/             # Pricing & subscription components
+│   └── ui/                  # Reusable UI components
+├── lib/
+│   ├── auth/                # Auth configuration
+│   ├── db/                  # Database client
+│   └── stripe/              # Stripe utilities
+├── prisma/
+│   └── schema.prisma        # Database schema
+└── public/                  # Static assets
 ```
 
-### 2. Database Sync
+## 🎨 Technical Highlights
 
-Update your `DATABASE_URL` in `.env`, then run:
+### Type Safety
 
-```bash
-npx prisma db push
-npx prisma generate
-```
+- Full TypeScript implementation
+- Prisma-generated types for database models
+- Type-safe API routes and server actions
+- Zod schema validation
 
-## 🗺 Setup Roadmap
+### Authentication Flow
 
-To ensure a seamless launch, follow the configuration in this specific order:
+- Multiple authentication providers
+- Passwordless magic link system
+- Secure session handling
+- Role-based access control
 
-### 1. Stripe Integration
+### Payment Integration
 
-Create your products (Pro & Elite) in Stripe. Map the Price IDs to your `.env`:
+- Subscription lifecycle management
+- Webhook signature verification
+- Usage-based billing ready
+- Customer portal redirect
 
-```bash
-NEXT_PUBLIC_STRIPE_PRICE_PRO_MONTHLY="price_..."
-NEXT_PUBLIC_STRIPE_PRICE_PRO_YEARLY="price_..."
-# ... same for ELITE
-```
+### Database Design
 
-### 2. Email Setup (Resend)
+- Normalized schema structure
+- Efficient indexing strategy
+- Relationship management
+- Migration versioning
 
-Configure Resend for transactional emails (Magic Links, Welcomes).
+## 💡 Skills Demonstrated
 
-```bash
-RESEND_API_KEY="re_..."
-```
+- Full-stack Development: End-to-end feature implementation
+- Authentication & Security: Auth.js integration, session management
+- Payment Processing: Stripe API, webhooks, subscription handling
+- Database Design: Prisma ORM, schema design, migrations
+- API Development: RESTful endpoints, server actions
+- Email Integration: Transactional email system
+- TypeScript: Advanced typing, type safety
+- Modern React: Server Components, Server Actions, React 19 hooks
+- DevOps: Environment configuration, deployment pipelines
 
-## 📖 Full Documentation
+## 🔗 Links :
 
-Need more details? Explore the complete documentation to master every part of the kit:
+Live Demo: (https://evines-saas-platform-full-solution.vercel.app/)
 
-- 📘 **Introduction** — Overview of architecture and features
-- 🚀 **Getting Started** — Step-by-step installation guide
-- 🗄️ **Database Setup** — PostgreSQL & Prisma configuration
-- 🔑 **Authentication** — Social logins & Magic Links
-- 💳 **Stripe Guide** — Handling subscriptions & Webhooks
+---
 
-## 🛠️ Commands Reference
-
-| Command             | Action                                          |
-| ------------------- | ----------------------------------------------- |
-| `npm run dev`       | Starts the development server at localhost:3000 |
-| `npm run build`     | Creates an optimized production build           |
-| `npx prisma studio` | Opens a visual editor for your database         |
-| `stripe listen`     | Forwards Stripe webhooks to your local machine  |
-
-## Support & Updates
-
-Maintained with ❤️ by **Bloomtpl**. For updates or technical support, visit [bloomtpl.com](https://bloomtpl.com).
+Developed by Bastien Andre
