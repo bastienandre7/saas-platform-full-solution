@@ -50,24 +50,45 @@ Evines is a comprehensive SaaS starter application I developed to explore and ma
 ## 📁 Project Architecture
 
 ```
-evines/
-├── app/                      # Next.js App Router
-│   ├── (auth)/              # Authentication routes
-│   ├── (dashboard)/         # Protected dashboard routes
-│   ├── api/                 # API routes & webhooks
-│   └── actions/             # Server actions
+evines-saas-app/
+├── app/
+│   ├── (auth)/                # Authentication pages
+│   │   ├── signin/
+│   │   └── verify-request/
+│   ├── (dashboard)/           # Protected dashboard pages
+│   │   └── dashboard/
+│   │       ├── billing/
+│   │       ├── projects/
+│   │       ├── settings/
+│   │       └── team/
+│   ├── (docs)/                # Documentation pages
+│   │   └── docs/
+│   ├── (marketing)/           # Public marketing pages
+│   │   ├── blog/
+│   │   │   └── [slug]/
+│   │   └── page.tsx
+│   ├── actions/               # Server actions
+│   ├── api/                   # API routes
+│   │   ├── auth/
+│   │   ├── stripe/
+│   │   └── webhook/
+│   └── globals.css
 ├── components/
-│   ├── auth/                # Authentication components
-│   ├── dashboard/           # Dashboard UI components
-│   ├── pricing/             # Pricing & subscription components
-│   └── ui/                  # Reusable UI components
-├── lib/
-│   ├── auth/                # Auth configuration
-│   ├── db/                  # Database client
-│   └── stripe/              # Stripe utilities
-├── prisma/
-│   └── schema.prisma        # Database schema
-└── public/                  # Static assets
+│   ├── auth/                  # Auth components
+│   ├── billing/               # Pricing & payments
+│   ├── blog/                  # Blog components
+│   ├── dashboard/             # Dashboard UI
+│   ├── layout/                # Header & footer
+│   ├── marketing/             # Landing page sections
+│   └── ui/                    # Reusable UI components
+├── config/
+│   └── plans.ts               # Pricing plans config
+├── content/
+│   └── blog/                  # MDX blog posts
+├── lib/                       # Utilities & integrations
+├── prisma/                    # Database schema & migrations
+├── public/                    # Static assets
+└── types/                     # TypeScript types
 ```
 
 ## 🎨 Technical Highlights
